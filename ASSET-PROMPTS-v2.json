@@ -1,0 +1,36 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "public/assets/scene-v1.png",
+  "assets": [
+    [
+      "scene-v2",
+      false,
+      "Edit target supplied scene. Preserve EXACT portrait composition dimensions camera car open hatch beach lighting and all scenery. Remove ALL remaining loose foreground items: yellow suitcase purple suitcase beach ball pink flamingo AND their cast shadows. Replace only their occupied regions with continuous sand parking ground. The foreground must be completely empty. Keep car and trunk pixel aligned as closely as possible. No text."
+    ],
+    [
+      "suitcase-yellow-v1",
+      true,
+      "Extract only the yellow wheeled suitcase from supplied reference as single standalone transparent game sprite. Keep rounded yellow ribbed plastic shell black trim extended handle wheels frontal slightly elevated camera and warm lighting. Closely framed with small even padding. No other items, no ground, no shadow, no text. Genuine transparent alpha background."
+    ],
+    [
+      "suitcase-purple-v1",
+      true,
+      "Extract only the small lavender purple wheeled suitcase from supplied reference as single standalone transparent game sprite. Keep rounded purple ribbed plastic shell dark trim extended handle wheels frontal slightly elevated camera and warm lighting. Closely framed with small even padding. No other items, no ground, no shadow, no text. Genuine transparent alpha background."
+    ],
+    [
+      "ball-v1",
+      true,
+      "Extract only the cream coral turquoise striped beach ball from supplied reference as standalone transparent game sprite. Keep exact smooth round inflatable ball stripes colors small circular top cap slightly elevated camera warm lighting. Closely framed with small even padding. No other items, no ground, no shadow, no text. Genuine transparent alpha background."
+    ],
+    [
+      "flamingo-v1",
+      true,
+      "Extract only the pink inflatable flamingo swimming ring from supplied reference as standalone transparent game sprite. Preserve whole round inflatable ring with hole curved long neck cute eyes black tipped cream beak glossy pink highlights and elevated frontal camera. Closely framed small even padding. No other items, no ground, no shadow, no text. Genuine transparent alpha background."
+    ],
+    [
+      "flamingo-flat-v1",
+      true,
+      "Reference: pink inflatable flamingo in the supplied scene. Produce a game sprite of that SAME pink flamingo swim ring AFTER deflation, collapsed into a small soft folded wrinkled pink vinyl bundle with the floppy curved neck resting sideways on top and its cute eye cream and black beak still clearly recognizable. Mostly horizontal compact shape, not a fully inflated ring, soft glossy folds and creases, warm sunlight matching reference, slightly elevated front view. One isolated object, genuinely transparent alpha background, no ground shadow, no text, no other objects. Tight even padding."
+    ]
+  ]
+}

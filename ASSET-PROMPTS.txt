@@ -1,0 +1,8 @@
+﻿Tool: built-in image_gen, edit mode.
+Reference: exec-a6440a21-d01b-4955-b8f6-26e349cdd8d4.png, previously approved concept.
+
+scene-v1.png:
+Edit target: supplied portrait game scene. Create a clean gameplay background plate. Preserve EXACT composition, camera, size/aspect ratio, turquoise car and open trunk, lighting, beach, yellow suitcase, purple suitcase, beach ball, pink flamingo and their locations. Remove ONLY the entire red suitcase at bottom left including its handle wheels and shadow, replacing with natural continuous sand ground. Also remove ALL typography/UI: top HEPSİ SIĞAR MI headline, top cream progress pill and 0/5, bottom instruction pill and text. Fill these with continuous matching sky or sand respectively. No new objects, do not move or resize remaining elements. This background will have live UI and a separate draggable red suitcase overlaid.
+
+suitcase-red-v1.png:
+Use case background-extraction. Supplied image is reference/edit target. Extract ONLY the coral red suitcase in the lower left into a standalone game sprite on genuinely transparent background. Preserve its glossy ribbed coral plastic, black zip trim, telescoping extended handle, four small dark wheels, exact front slightly elevated view, proportions and soft sunny lighting. Whole suitcase fully visible from handle top to wheel bottoms. Closely framed with small even padding, single centered suitcase, no ground plane or cast ground shadow, no other objects, no text, no decoration. High quality antialiased transparent edges. Portrait canvas.
