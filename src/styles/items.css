@@ -1,0 +1,66 @@
+.item {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background: none;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  touch-action: none;
+  z-index: 3;
+  filter: drop-shadow(0 0.4cqw 0.25cqw #4c302343);
+  outline-offset: -2cqw;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.item:disabled {
+  cursor: default;
+}
+.item.held {
+  z-index: 10;
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.08) rotate(-3deg);
+  filter: drop-shadow(1.5cqw 2.5cqw 1.8cqw #36241c50);
+}
+.item.in-trunk {
+  z-index: 2;
+  pointer-events: none;
+}
+.item-shadow {
+  position: absolute;
+  height: 1.4%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #573b30;
+  filter: blur(1cqw);
+  opacity: 0.24;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.item-shadow.away {
+  opacity: 0;
+}
+.loading .item {
+  opacity: 0;
+}
+.item .flat-sprite {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  object-fit: fill;
+}
+.item.deflated > img:first-child {
+  opacity: 0;
+}
+.item.deflated .flat-sprite {
+  opacity: 1;
+}
+.item.deflating > img:first-child {
+  animation: deflate-out 0.95s linear forwards;
+}
+.item.deflating .flat-sprite {
+  animation: deflate-in 0.95s linear forwards;
+}

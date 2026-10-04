@@ -1,0 +1,54 @@
+@keyframes burst {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) rotate(90deg) scale(0.2);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes valve-pulse {
+  to {
+    box-shadow: 0 0 15px 5px #ff70ac88;
+  }
+}
+@keyframes deflate-out {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  85%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes deflate-in {
+  0%,
+  35% {
+    opacity: 0;
+  }
+  85%,
+  100% {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .item.deflating > img:first-child {
+    opacity: 0;
+  }
+  .item.deflating .flat-sprite {
+    opacity: 1;
+  }
+}

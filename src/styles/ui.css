@@ -1,0 +1,230 @@
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 5px;
+}
+[hidden] {
+  display: none !important;
+}
+.hud {
+  position: absolute;
+  top: 2.15%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+h1 {
+  font-size: 8.2cqw;
+  font-weight: 1000;
+  letter-spacing: -0.35cqw;
+  margin: 0 0 1.6cqw;
+  text-shadow: 0 2px 0 #ffffff50;
+  line-height: 1.15;
+}
+.progress {
+  margin: auto;
+  background: #fff5dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4cqw;
+  width: 34cqw;
+  border-radius: 8cqw;
+  padding: 1.1cqw 2.5cqw;
+  box-shadow:
+    0 0.6cqw 0 #cfbfa050,
+    inset 0 1px 0 #fff;
+}
+.progress strong {
+  font-size: 3.3cqw;
+  white-space: nowrap;
+  letter-spacing: 0.1cqw;
+}
+.dots {
+  display: flex;
+  gap: 1cqw;
+}
+.dots i {
+  width: 2.6cqw;
+  height: 2.6cqw;
+  background: #d0c4ad;
+  box-shadow: inset 0 1px 2px #786a4230;
+  border-radius: 50%;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.target {
+  position: absolute;
+  left: 27%;
+  top: 35%;
+  width: 46%;
+  height: 13%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 1;
+}
+.target-outline {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #fff4c7aa;
+  border-radius: 12%;
+  background: #ffefb012;
+  box-shadow:
+    0 0 22px #ffefa022,
+    inset 0 0 25px #ffefa022;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.target span {
+  position: absolute;
+  left: 0;
+  top: 103%;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.2cqw;
+  font-weight: bold;
+  color: #fff3cc;
+  text-shadow: 0 1px 5px #000;
+  font-size: 1.8cqw;
+  white-space: nowrap;
+}
+.dragging .target {
+  opacity: 1;
+}
+.over-target .target-outline {
+  background: #68ffbc30;
+  border-color: #a4ffe0;
+  box-shadow:
+    0 0 24px #85ffd34d,
+    inset 0 0 26px #85ffd333;
+}
+.footer {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  top: 90%;
+  gap: 1.2cqw;
+}
+.instruction {
+  margin: 0;
+  background: #fff5de;
+  box-shadow:
+    0 0.55cqw 1cqw #66481b25,
+    inset 0 1px 0 #fff;
+  border-radius: 10cqw;
+  font-weight: bold;
+  line-height: 1.2;
+  font-size: 3.2cqw;
+  padding: 2cqw 3.8cqw;
+}
+.stage-label {
+  letter-spacing: 0.15cqw;
+  color: #6c624f;
+  font-weight: bold;
+  font-size: 1.5cqw;
+}
+.replay {
+  border: 0;
+  background: #0d6870;
+  color: #fff7e7;
+  font-weight: bold;
+  border-radius: 6cqw;
+  cursor: pointer;
+  box-shadow: 0 0.5cqw 0 #064852;
+  padding: 1.4cqw 3.5cqw;
+  font-size: 2.6cqw;
+}
+.replay:hover {
+  background: #12828b;
+}
+.sparkles {
+  position: absolute;
+  left: 37.5%;
+  top: 42%;
+  z-index: 4;
+  pointer-events: none;
+}
+.sparkles i {
+  position: absolute;
+  width: 1.3cqw;
+  height: 1.3cqw;
+  background: #fff3b6;
+  border-radius: 2px;
+  animation: burst 0.7s var(--delay) ease-out both;
+}
+.load-error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 20px;
+  background: #fff5deed;
+  text-align: center;
+  padding: 20px;
+}
+.load-error button {
+  padding: 12px;
+  border: 0;
+  border-radius: 20px;
+  background: #126875;
+  color: #fff;
+}
+.dots i.filled {
+  background: #28b99b;
+  transform: scale(1.12);
+}
+.valve {
+  position: absolute;
+  left: 72%;
+  top: 84.5%;
+  z-index: 5;
+  border: 1px solid #fff6;
+  background: #fff6df;
+  color: #a42d62;
+  box-shadow: 0 0.5cqw 1cqw #66481b25;
+  border-radius: 5cqw;
+  font-size: 1.8cqw;
+  font-weight: bold;
+  padding: 1.5cqw 1.7cqw;
+  cursor: pointer;
+  min-height: 30px;
+}
+.valve span {
+  color: #e65391;
+  font-size: 3cqw;
+  vertical-align: middle;
+}
+.valve:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+.valve.attention {
+  animation: valve-pulse 0.7s ease-in-out infinite alternate;
+}
+.too-large .target-outline {
+  background: #ff607133;
+  border-color: #ff94aa;
+}
+.too-large .target span {
+  color: #ffadc4;
+}
+.complete .instruction {
+  color: #16826a;
+}
+.complete h1 {
+  color: #086e65;
+}
+.complete .footer {
+  top: 88.7%;
+}

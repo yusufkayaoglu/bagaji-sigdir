@@ -8,13 +8,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test",
-    "optimize:assets": "node scripts/optimize-assets.mjs"
-  },
-  "dependencies": {
-    "phaser": "^4.2.1"
+    "optimize:assets": "node scripts/optimize-assets.mjs",
+    "format": "prettier --write src scripts tests *.js",
+    "format:check": "prettier --check src scripts tests *.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "prettier": "^3.9.9",
     "sharp": "^0.35.5",
     "vite": "^8.3.1"
   }

@@ -23,3 +23,18 @@ Görseller yerleşik Imagegen aracıyla üretilmiş, public/assets altına kayde
 
 Kaynaklardan yeniden üretim: npm run optimize:assets
 Doğrulama: npm test ve npm run build
+
+## Kod yapısı
+
+- src/main.js: uygulama başlangıcı ve geliştirme sırasında temiz kapanış.
+- src/game/GameController.js: yükleme, yerleştirme, sönme, tamamlanma ve sıfırlama akışı.
+- src/game/data/items.js: eşya görselleri, başlangıç konumları, bagaj yuvaları ve sönmüş flamingo boyutları.
+- src/game/input/DragController.js: fare/dokunma/klavye, pointer capture ve iptal yönetimi. Ekran ölçümü hareket başlangıcında yapılır; stil yazımları requestAnimationFrame ile birleştirilir.
+- src/game/ui/createView.js: ekran üretimi, önbelleklenmiş DOM referansları, eşya çizimi ve ilerleme göstergesi.
+- src/game/effects/animations.js: geri dönüş, yerleşme, sönme ve kutlama animasyonları.
+- src/game/geometry.js: koordinat dönüşümü ve bagaj alanı denetimi.
+- src/styles/: temel yerleşim, eşyalar, arayüz ve animasyon stilleri.
+
+Oyun kapanışında olay dinleyicileri, bekleyen çizim ve animasyonlar temizlenir. Sıfırlama öncesi animasyonların eski durumu geri yazması engellenir. Kullanılmayan Phaser bağımlılığı kaldırılmıştır; çalışma zamanı ek kütüphane gerektirmez.
+
+npm run format kodu biçimlendirir; npm run format:check biçimlendirmeyi kontrol eder. GitHub Actions derlemeden sonra Chromium üzerinde etkileşim testlerini çalıştırır; kontroller geçmeden Pages dağıtımı yapılmaz. Yerel testler Windows üzerinde Edge kullanır.
