@@ -1,5 +1,6 @@
-﻿import './style.css';
-const asset = name => `${import.meta.env.BASE_URL}assets/${name}.png`;
+import './style.css';
+const images = import.meta.glob('./assets/*.webp', { eager: true, query: '?url', import: 'default' });
+const asset = name => images[`./assets/${name}.webp`];
 const definitions = [
   { id:'red', name:'Kırmızı bavul', image:'suitcase-red-v1', home:{x:12.2,y:74.1,w:25,h:23}, slot:{x:34,y:39.5,w:14,h:13} },
   { id:'yellow', name:'Sarı bavul', image:'suitcase-yellow-v1', home:{x:32,y:75.5,w:21,h:20}, slot:{x:50,y:40,w:14,h:12} },
@@ -8,7 +9,7 @@ const definitions = [
   { id:'flamingo', name:'Flamingo', image:'flamingo-v1', home:{x:85,y:75.5,w:28,h:20}, slot:{x:56,y:48.2,w:22,h:4.2} },
 ];
 document.querySelector('#app').innerHTML = `<main class="game loading" aria-label="Bagajı Sığdır">
-<img class="scene" src="${asset('scene-v2')}" alt="Sahilde bagajı açık turkuaz araba" draggable="false">
+<img class="scene" fetchpriority="high" decoding="async" src="${asset('scene-v2')}" alt="Sahilde bagajı açık turkuaz araba" draggable="false">
 <header class="hud"><h1>HEPSİ SIĞAR MI?</h1><div class="progress"><div class="dots" aria-hidden="true">${'<i></i>'.repeat(5)}</div><strong id="count">0 / 5</strong></div></header>
 <div class="target" aria-hidden="true"><div class="target-outline"></div><span>BURAYA BIRAK</span></div>
 ${definitions.map(d=>`<div class="item-shadow" data-shadow="${d.id}"></div><button class="item ${d.id==='red'?'suitcase':''}" data-item="${d.id}" aria-label="${d.name}. Bagaja sürükle veya Enter ile yerleştir." disabled><img src="${asset(d.image)}" alt="" draggable="false">${d.id==='flamingo'?`<img class="flat-sprite" src="${asset('flamingo-flat-v1')}" alt="" draggable="false">`:''}</button>`).join('')}

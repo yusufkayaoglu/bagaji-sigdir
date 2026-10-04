@@ -16,3 +16,10 @@ Fare, dokunma ve klavye desteklenir. Tab ile eşya seçip Enter veya Boşluk ile
 Bu aşama yerleştirme etkileşimidir. Bagaj kapanışı, araç hareketi, reklam ağı entegrasyonu ve mağaza bağlantısı henüz uygulanmamıştır. Hedef reklam ağına göre görsel boyut optimizasyonu ayrıca yapılacaktır.
 
 Görseller yerleşik Imagegen aracıyla üretilmiş, public/assets altına kaydedilmiştir. Üretim istemleri ASSET-PROMPTS.txt ve ASSET-PROMPTS-v2.json dosyalarındadır. scene-v2 boş sahne, ayrı PNG dosyaları alfa kanallı eşya görselleridir. Eski görseller korunmuştur.
+
+## Görsel optimizasyonu
+
+Çalışan oyunun görselleri src/assets içindeki WebP dosyalarıdır. Yedi görsel toplam 186.808 bayttır (önce 10.426.337 bayt PNG). Arka plan 720 piksel genişliğe, sprite görselleri ekrandaki boyutlarına uygun çözünürlüğe indirilmiştir; alfa kanalları korunur. Arka plan HTML üzerinden ön yüklenir. Vite içerik hashleriyle dosyaları paketler. publicDir kapalı olduğu için public/assets içindeki yüksek çözünürlüklü kaynak PNG dosyaları yayına kopyalanmaz.
+
+Kaynaklardan yeniden üretim: npm run optimize:assets
+Doğrulama: npm test ve npm run build

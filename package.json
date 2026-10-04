@@ -7,13 +7,15 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "playwright test"
+    "test": "playwright test",
+    "optimize:assets": "node scripts/optimize-assets.mjs"
   },
   "dependencies": {
     "phaser": "^4.2.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "sharp": "^0.35.5",
     "vite": "^8.3.1"
   }
 }
